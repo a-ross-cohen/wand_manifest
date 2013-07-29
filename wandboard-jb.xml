@@ -3,7 +3,7 @@
 
   <remote  name="wandboard"
            fetch="git://www.wandboard.org/android/" />
-  <default revision="jb4.2.2_1.0.0-ga__wandboard"
+  <default revision="jb4.2.2_1.1.0-ga__wandboard"
            remote="wandboard"
            />
 
