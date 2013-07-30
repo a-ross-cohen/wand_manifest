@@ -210,6 +210,7 @@
   <project path="external/linux-test" name="external/linux-test" />
   <project path="external/ntfs-3g" name="external/ntfs-3g" />
   <project path="external/powerdebug" name="external/powerdebug" />
+  <project path="external/mtd-utils" name="external/mtd-utils" />
   <project path="frameworks/av" name="frameworks/av" groups="pdk" />
   <project path="frameworks/base" name="frameworks/base" />
   <project path="frameworks/compile/libbcc" name="frameworks/compile/libbcc" groups="pdk" />
