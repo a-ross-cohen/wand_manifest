@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+ <remote  name="aosp"
+           fetch=".."
+           review="https://android-review.googlesource.com/" />
+  <default revision="refs/tags/android-4.2.1_r1"
+           remote="aosp"
+           sync-j="4" />
+  
   <remote  name="wandboard"
            fetch="git://www.wandboard.org/android/" />
-  <default revision="refs/tags/android-4.2.2_r1"
-           remote="wandboard"
-           />
 
-  <project path="build" name="build" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" >
+  <project path="build" name="build" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
-  <project path="kernel_imx" name="kernel_imx" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="bootable/bootloader/uboot-imx" name="uboot-imx" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="kernel_imx" name="kernel_imx" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="bootable/bootloader/uboot-imx" name="uboot-imx" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="abi/cpp" name="abi/cpp" groups="pdk" />
-  <project path="bionic" name="bionic" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="bionic" name="bionic" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="bootable/bootloader/legacy" name="bootable/bootloader/legacy" />
   <project path="bootable/diskinstaller" name="bootable/diskinstaller" />
-  <project path="bootable/recovery" name="bootable/recovery" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="bootable/recovery" name="bootable/recovery" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="cts" name="cts" />
   <project path="dalvik" name="dalvik" />
   <project path="development" name="development" />
   <project path="device/asus/grouper" name="device/asus/grouper" groups="device,grouper" />
   <project path="device/asus/tilapia" name="device/asus/tilapia" groups="device,grouper" />
-  <project path="device/common" name="device/common" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="device/common" name="device/common" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/armv7-a" name="device/generic/armv7-a" groups="pdk" />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
@@ -40,8 +44,8 @@
   <project path="device/samsung/toroplus" name="device/samsung/toroplus" groups="device,tuna" />
   <project path="device/samsung/tuna" name="device/samsung/tuna" groups="device,tuna" />
   <project path="device/ti/panda" name="device/ti/panda" groups="device" />
-  <project path="device/fsl-proprietary" name="device/fsl-proprietary" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="device/fsl" name="device/fsl" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="device/fsl-proprietary" name="device/fsl-proprietary" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="device/fsl" name="device/fsl" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="docs/source.android.com" name="docs/source.android.com" />
   <project path="external/aac" name="external/aac" groups="pdk" />
   <project path="external/android-clat" name="external/android-clat" />
@@ -162,7 +166,7 @@
   <project path="external/oprofile" name="external/oprofile" />
   <project path="external/ping" name="external/ping" />
   <project path="external/ping6" name="external/ping6" />
-  <project path="external/ppp" name="external/ppp" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/ppp" name="external/ppp" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="external/proguard" name="external/proguard" groups="pdk-java" />
   <project path="external/protobuf" name="external/protobuf" groups="pdk" />
   <project path="external/qemu" name="external/qemu" />
@@ -185,7 +189,7 @@
   <project path="external/svox" name="external/svox" />
   <project path="external/tagsoup" name="external/tagsoup" />
   <project path="external/tcpdump" name="external/tcpdump" />
-  <project path="external/tinyalsa" name="external/tinyalsa"  groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/tinyalsa" name="external/tinyalsa"  groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="external/tinyxml" name="external/tinyxml" />
   <project path="external/tinyxml2" name="external/tinyxml2" groups="pdk" />
   <project path="external/tremolo" name="external/tremolo" groups="pdk" />
@@ -196,23 +200,23 @@
   <project path="external/webrtc" name="external/webrtc" groups="pdk" />
   <project path="external/wpa_supplicant_6" name="external/wpa_supplicant_6" />
   <project path="external/wpa_supplicant_8" name="external/wpa_supplicant_8" groups="pdk" />
-  <project path="external/wpa_supplicant_8_rtl" name="external/wpa_supplicant_8_rtl" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/wpa_supplicant_ath" name="external/wpa_supplicant_ath" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/wpa_supplicant_8_rtl" name="external/wpa_supplicant_8_rtl" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/wpa_supplicant_ath" name="external/wpa_supplicant_ath" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="external/xmlwriter" name="external/xmlwriter" />
   <project path="external/xmp_toolkit" name="external/xmp_toolkit" />
   <project path="external/yaffs2" name="external/yaffs2" groups="pdk" />
   <project path="external/zlib" name="external/zlib" groups="pdk" />
   <project path="external/zxing" name="external/zxing" />
-  <project path="external/busybox" name="external/busybox" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/fsl_imx_omx" name="external/fsl_imx_omx" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/linux-firmware-imx" name="external/linux-firmware-imx" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/linux-lib" name="external/linux-lib" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/linux-test" name="external/linux-test" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/ntfs-3g" name="external/ntfs-3g" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/powerdebug" name="external/powerdebug" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="external/mtd-utils" name="external/mtd-utils" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="frameworks/av" name="frameworks/av" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="frameworks/base" name="frameworks/base" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/busybox" name="external/busybox" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/fsl_imx_omx" name="external/fsl_imx_omx" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/linux-firmware-imx" name="external/linux-firmware-imx" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/linux-lib" name="external/linux-lib" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/linux-test" name="external/linux-test" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/ntfs-3g" name="external/ntfs-3g" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/powerdebug" name="external/powerdebug" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="external/mtd-utils" name="external/mtd-utils" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="frameworks/av" name="frameworks/av" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="frameworks/base" name="frameworks/base" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="frameworks/compile/libbcc" name="frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/linkloader" name="frameworks/compile/linkloader" groups="pdk" />
   <project path="frameworks/compile/llvm-ndk-cc" name="frameworks/compile/llvm-ndk-cc" groups="pdk" />
@@ -221,7 +225,7 @@
   <project path="frameworks/ex" name="frameworks/ex" />
   <project path="frameworks/mff" name="frameworks/mff" />
   <project path="frameworks/ml" name="frameworks/ml" />
-  <project path="frameworks/native" name="frameworks/native" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="frameworks/native" name="frameworks/native" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="frameworks/opt/calendar" name="frameworks/opt/calendar" />
   <project path="frameworks/opt/carddav" name="frameworks/opt/carddav" />
   <project path="frameworks/opt/emoji" name="frameworks/opt/emoji" />
@@ -231,15 +235,15 @@
   <project path="frameworks/opt/photoviewer" name="frameworks/opt/photoviewer" />
   <project path="frameworks/opt/telephony" name="frameworks/opt/telephony" />
   <project path="frameworks/opt/vcard" name="frameworks/opt/vcard" />
-  <project path="frameworks/rs" name="frameworks/rs" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="frameworks/rs" name="frameworks/rs" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="frameworks/support" name="frameworks/support" />
   <project path="frameworks/testing" name="frameworks/testing" />
   <project path="frameworks/wilhelm" name="frameworks/wilhelm" />
   <project path="gdk" name="gdk" />
-  <project path="hardware/broadcom/wlan" name="hardware/broadcom/wlan" groups="broadcom_wlan" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="hardware/broadcom/wlan" name="hardware/broadcom/wlan" groups="broadcom_wlan" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="hardware/invensense" name="hardware/invensense" groups="invensense" />
-  <project path="hardware/libhardware" name="hardware/libhardware" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="hardware/libhardware_legacy" name="hardware/libhardware_legacy" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="hardware/libhardware" name="hardware/libhardware" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="hardware/libhardware_legacy" name="hardware/libhardware_legacy" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="hardware/msm7k" name="hardware/msm7k" />
   <project path="hardware/qcom/audio" name="hardware/qcom/audio" groups="qcom" />
   <project path="hardware/qcom/bt" name="hardware/qcom/bt" groups="qcom" />
@@ -252,15 +256,15 @@
   <project path="hardware/qcom/power" name="hardware/qcom/power" groups="qcom" />
   <project path="hardware/qcom/sensors" name="hardware/qcom/sensors" groups="qcom" />
   <project path="hardware/qcom/wlan" name="hardware/qcom/wlan" groups="qcom_wlan" />
-  <project path="hardware/ril" name="hardware/ril" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="hardware/ril" name="hardware/ril" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="hardware/samsung_slsi/exynos5" name="hardware/samsung_slsi/exynos5" groups="exynos5" />
   <project path="hardware/ti/omap3" name="hardware/ti/omap3" />
   <project path="hardware/ti/omap4xxx" name="hardware/ti/omap4xxx" groups="omap4" />
   <project path="hardware/ti/wlan" name="hardware/ti/wlan" />
   <project path="hardware/ti/wpan" name="hardware/ti/wpan" />
-  <project path="hardware/imx" name="hardware/imx" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="hardware/realtek" name="hardware/realtek" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="libcore" name="libcore" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="hardware/imx" name="hardware/imx" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="hardware/realtek" name="hardware/realtek" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="libcore" name="libcore" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="libnativehelper" name="libnativehelper" groups="pdk-java" />
   <project path="ndk" name="ndk" />
   <project path="packages/apps/BasicSmsReceiver" name="packages/apps/BasicSmsReceiver" />
@@ -272,11 +276,11 @@
   <project path="packages/apps/CellBroadcastReceiver" name="packages/apps/CellBroadcastReceiver" />
   <project path="packages/apps/CertInstaller" name="packages/apps/CertInstaller" />
   <project path="packages/apps/Contacts" name="packages/apps/Contacts" />
-  <project path="packages/apps/DeskClock" name="packages/apps/DeskClock" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/apps/DeskClock" name="packages/apps/DeskClock" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/apps/Email" name="packages/apps/Email" />
   <project path="packages/apps/Exchange" name="packages/apps/Exchange" />
   <project path="packages/apps/Gallery" name="packages/apps/Gallery" />
-  <project path="packages/apps/Gallery2" name="packages/apps/Gallery2" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/apps/Gallery2" name="packages/apps/Gallery2" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/apps/HTMLViewer" name="packages/apps/HTMLViewer" />
   <project path="packages/apps/KeyChain" name="packages/apps/KeyChain" />
   <project path="packages/apps/Launcher2" name="packages/apps/Launcher2" />
@@ -290,18 +294,18 @@
   <project path="packages/apps/Protips" name="packages/apps/Protips" />
   <project path="packages/apps/Provision" name="packages/apps/Provision" />
   <project path="packages/apps/QuickSearchBox" name="packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="packages/apps/Settings" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/apps/Settings" name="packages/apps/Settings" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/apps/SmartCardService" name="packages/apps/SmartCardService" />
-  <project path="packages/apps/SoundRecorder" name="packages/apps/SoundRecorder" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/apps/SoundRecorder" name="packages/apps/SoundRecorder" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/apps/SpareParts" name="packages/apps/SpareParts" />
   <project path="packages/apps/SpeechRecorder" name="packages/apps/SpeechRecorder" />
   <project path="packages/apps/Stk" name="packages/apps/Stk" />
   <project path="packages/apps/Tag" name="packages/apps/Tag" />
   <project path="packages/apps/VideoEditor" name="packages/apps/VideoEditor" />
   <project path="packages/apps/VoiceDialer" name="packages/apps/VoiceDialer" />
-  <project path="packages/apps/fsl_imx_demo" name="packages/apps/fsl_imx_demo" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/apps/fsl_imx_demo" name="packages/apps/fsl_imx_demo" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/experimental" name="packages/experimental" />
-  <project path="packages/inputmethods/LatinIME" name="packages/inputmethods/LatinIME" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/inputmethods/LatinIME" name="packages/inputmethods/LatinIME" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/inputmethods/OpenWnn" name="packages/inputmethods/OpenWnn" />
   <project path="packages/inputmethods/PinyinIME" name="packages/inputmethods/PinyinIME" />
   <project path="packages/providers/ApplicationsProvider" name="packages/providers/ApplicationsProvider" />
@@ -309,14 +313,14 @@
   <project path="packages/providers/ContactsProvider" name="packages/providers/ContactsProvider" />
   <project path="packages/providers/DownloadProvider" name="packages/providers/DownloadProvider" />
   <project path="packages/providers/DrmProvider" name="packages/providers/DrmProvider" />
-  <project path="packages/providers/MediaProvider" name="packages/providers/MediaProvider" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/providers/MediaProvider" name="packages/providers/MediaProvider" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/providers/PartnerBookmarksProvider" name="packages/providers/PartnerBookmarksProvider" />
   <project path="packages/providers/TelephonyProvider" name="packages/providers/TelephonyProvider" />
   <project path="packages/providers/UserDictionaryProvider" name="packages/providers/UserDictionaryProvider" />
   <project path="packages/screensavers/Basic" name="packages/screensavers/Basic" />
   <project path="packages/screensavers/PhotoTable" name="packages/screensavers/PhotoTable" />
   <project path="packages/screensavers/WebView" name="packages/screensavers/WebView" />
-  <project path="packages/wallpapers/Basic" name="packages/wallpapers/Basic" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="packages/wallpapers/Basic" name="packages/wallpapers/Basic" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="packages/wallpapers/Galaxy4" name="packages/wallpapers/Galaxy4" />
   <project path="packages/wallpapers/HoloSpiral" name="packages/wallpapers/HoloSpiral" />
   <project path="packages/wallpapers/LivePicker" name="packages/wallpapers/LivePicker" />
@@ -349,13 +353,13 @@
   <project path="prebuilts/sdk" name="prebuilts/sdk" groups="pdk" />
   <project path="prebuilts/tools" name="prebuilts/tools" groups="pdk" />
   <project path="sdk" name="sdk" />
-  <project path="system/bluetooth" name="system/bluetooth" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="system/core" name="system/core" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
-  <project path="system/extras" name="system/extras" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="system/bluetooth" name="system/bluetooth" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="system/core" name="system/core" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="system/extras" name="system/extras" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="system/media" name="system/media" groups="pdk" />
   <project path="system/netd" name="system/netd" groups="pdk" />
   <project path="system/security" name="system/security" groups="pdk" />
-  <project path="system/vold" name="system/vold" groups="pdk" revision="jb4.2.2_1.1.0-ga__wandboard" />
+  <project path="system/vold" name="system/vold" groups="pdk" remote="wandboard" revision="jb4.2.2_1.1.0-ga__wandboard" />
   <project path="tools/build" name="tools/build" groups="notdefault,tools" />
   <project path="tools/motodev" name="tools/motodev" groups="notdefault,motodev" />
 
