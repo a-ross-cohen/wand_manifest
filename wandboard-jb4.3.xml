@@ -9,8 +9,10 @@
 
   <remote  name="wandboard"
            fetch="git://www.wandboard.org/android/" />
+  <remote  name="arosscohen"
+          fetch="https://github.com/a-ross-cohen" />
 
-  <project path="build" name="build" groups="pdk" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard">
+  <project path="build" name="wand_build" groups="pdk" remote="arosscohen" revision="jb4.3_1.1.0-ga__wandboard_osx">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="kernel_imx" name="kernel_imx" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
@@ -54,7 +56,7 @@
   <project path="device/samsung_slsi/arndale" name="device/samsung_slsi/arndale" groups="device" />
   <project path="device/ti/panda" name="device/ti/panda" groups="device" />
   <project path="device/fsl-proprietary" name="device/fsl-proprietary" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
-  <project path="device/fsl" name="device/fsl" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
+  <project path="device/fsl" name="wand_device_fsl" remote="arosscohen" revision="jb4.3_1.1.0-ga__wandboard_osx" />
   <project path="docs/source.android.com" name="platform/docs/source.android.com" />
   <project path="external/aac" name="platform/external/aac" groups="pdk" />
   <project path="external/android-clat" name="platform/external/android-clat" />
@@ -226,7 +228,7 @@
   <project path="external/linux-test" name="external/linux-test" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
   <project path="external/ntfs-3g" name="external/ntfs-3g" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
   <project path="external/powerdebug" name="external/powerdebug" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
-  <project path="external/mtd-utils" name="external/mtd-utils" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard" />
+  <project path="external/mtd-utils" name="wand_external_mtd-utils" remote="arosscohen" revision="jb4.3_1.1.0-ga__wandboard_osx" />
   <project path="frameworks/av" name="frameworks/av" groups="pdk" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard"/>
   <project path="frameworks/base" name="frameworks/base" remote="wandboard" revision="jb4.3_1.1.0-ga__wandboard"/>
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
